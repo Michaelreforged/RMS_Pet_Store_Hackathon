@@ -4,7 +4,7 @@ class CreateItems < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :description
       t.float :price
-      t.belongs_to :pets, null: false, foreign_key: true
+      t.belongs_to :pet, null: false, foreign_key: true
 
       t.timestamps
     end

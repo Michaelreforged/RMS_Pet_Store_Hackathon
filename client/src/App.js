@@ -1,5 +1,8 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { Container } from "semantic-ui-react";
+import Navbar from "./Components/Navbar";
+import { Switch, Route } from "react-router-dom";
 
 function App() {
   return (

@@ -1,3 +1,3 @@
 class Item < ApplicationRecord
-  belongs_to :pets
+  belongs_to :pet
 end

@@ -4,10 +4,10 @@ one:
   name: MyString
   description: MyString
   price: 1.5
-  pets: one
+  pet: one
 
 two:
   name: MyString
   description: MyString
   price: 1.5
-  pets: two
+  pet: two
