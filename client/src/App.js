@@ -2,7 +2,7 @@ import { Container } from "semantic-ui-react";
 import NavBar from "./components/NavBar";
 import { Switch, Route } from "react-router-dom";
 import Footer from "./components/Footer";
-
+import "./App.css";
 import Home from "./components/Home";
 import Jobs from "./components/Jobs";
 import JobNew from "./components/JobNew";
