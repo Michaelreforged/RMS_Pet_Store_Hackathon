@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import axios from "axios"
 import { Button, Card, Icon, Popup } from "semantic-ui-react";
+import { Link } from 'react-router-dom'; 
 import ItemForm from "./ItemForm";
 import Item from "./Item";
 
@@ -63,6 +64,7 @@ const Items = (props) => {
 
   const renderItems = () => {
     return items.map((item)=>(
+      
       <div key={item.id}>
 
         <h2>{item.name}</h2>
@@ -83,14 +85,20 @@ const Items = (props) => {
 
   return(
     <div>
-      
-      <button onClick={() => history.goBack()}>Back</button><br></br>
       <h1>{pets.name}</h1>
-      <button onClick={() => setShowform2(!showform2)}> {showform2?"Cancel Add Item":"AddItem"}</button>
+      <Link to={`/pets`}>
+        <Popup content='Go Back' trigger={<Button icon="angle left" color="teal" />} />
+      </Link>
+      <br />
+      <br />
+      {/* <button onClick={() => history.goBack()}>Back</button><br></br> */}
+      <Button color='teal' onClick={() => setShowform2(!showform2)}> {showform2?"Cancel Add Item":"AddItem"}</Button>
       {showform2&&<ItemForm
       addItem={addItem}
       />}
       {addItem}
+      <br />
+      <br />
       {renderItems()}
     </div>
   )
