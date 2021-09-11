@@ -19,7 +19,7 @@ const Job = (props) => {
         <Button color="blue" onClick={() => setShowForm(!showForm)}>
           <Icon name="pencil" />
         </Button>
-        <Button color="red" onClick={() => props.deleteThing(props.id)}>
+        <Button color="red" onClick={() => props.deleteJob(props.id)}>
           <Icon name="trash" />
         </Button>
       </Button.Group>
