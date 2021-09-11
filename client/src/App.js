@@ -5,29 +5,30 @@ import NavBar from "./components/NavBar";
 import { Switch, Route } from "react-router-dom";
 import Footer from "./components/Footer";
 
-// import Pizzas from "./components/Pizzas";
 import Home from "./components/Home";
 import Jobs from "./components/Jobs";
 import JobNew from "./components/JobNew";
-// import PizzaEdit from "./components/PizzaEdit";
-// import Topping from "./components/Topping";
-// import Toppings from "./components/Toppings";
+import JobEdit from "./components/JobEdit";
 
 function App() {
   return (
-    <>
-      <NavBar />
-      <Container>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/jobs" component={Jobs} />
-          <Route exact path="/jobs/new" component={JobNew} />
-          {/* <Route exact path="/jobs/:id" component={Job} />
-          <Route exact path="/jobs/:id/edit" component={JobEdit} /> */}
-        </Switch>
-      </Container>  
+    <div className="page-container">
+      <div className="content-wrap">
+        <NavBar />
+        <div>
+          <Container>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/jobs" component={Jobs} />
+              <Route exact path="/jobs/new" component={JobNew} />
+              {/* <Route exact path="/jobs/:id" component={Job} /> */}
+              <Route exact path="/jobs/:id/edit" component={JobEdit} />
+            </Switch>
+          </Container>  
+        </div>
+      </div>
       <Footer />
-    </>
+    </div>
   );
 }
 

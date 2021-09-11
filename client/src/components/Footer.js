@@ -14,7 +14,7 @@ import Logo from './images/logo2.png'
 
 const Footer = () => {
   return (
-    
+    <Sticky>
     <div style={styles.Footer}>
     <Segment inverted vertical style={{ margin: '8em 0em 0em', padding: '1em 0em' }}>
       <Container textAlign='center'>
@@ -47,6 +47,7 @@ const Footer = () => {
       </Container>
     </Segment>
     </div>
+    </Sticky>
     
 
   );
@@ -55,11 +56,8 @@ const Footer = () => {
 const styles = {
   Footer: {
     position: "relative",
-    bottom: "auto",
+    bottom: "0",
     width: "100%",
-    // height: "500px",
-    // marginTop: "-50px",
-    // marginBottom: "200px",
   },
 };
 
