@@ -110,9 +110,9 @@ const JobNew = (props) => {
   return (
     <>
       
-      <h1>JobFormNew</h1>
+      <h1>Job New</h1>
       <Link to={`/jobs`}>
-        <Popup content='Go Back' trigger={<Button icon="angle left" color="blue" />} />
+        <Popup content='Go Back' trigger={<Button icon="angle left" color="teal" />} />
       </Link>
       <Form onSubmit={handleSubmit}>
         <Form.Field>
@@ -135,7 +135,7 @@ const JobNew = (props) => {
           {/* <Button type="submit" color="blue">
             Add
           </Button> */}
-          <div><Button class="ui button" color='blue' type={'submit'}>Add Job</Button></div>
+          <div><Button class="ui button" color='teal' type={'submit'}>Add Job</Button></div>
         </Form.Field>
       </Form>
     </>
