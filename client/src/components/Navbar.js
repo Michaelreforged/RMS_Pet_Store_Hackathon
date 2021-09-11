@@ -4,6 +4,7 @@ import { Menu, Sticky } from "semantic-ui-react";
 
 const Navbar = () => {
   return (
+  <Sticky>
     <Menu>
       <Link to="/">
         <Menu.Item>Home</Menu.Item>
@@ -12,6 +13,7 @@ const Navbar = () => {
         <Menu.Item>Pets</Menu.Item>
       </Link>
     </Menu>
+  </Sticky>
   );
 };
 
