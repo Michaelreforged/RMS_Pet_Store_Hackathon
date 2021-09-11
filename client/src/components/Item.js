@@ -3,7 +3,7 @@ import { useHistory } from "react-router";
 
 const Item = (props) => {
   const history = useHistory()
-  const{petName,id,name,description,price,} = props
+  const{petName,id,name,description,price, deleteItem} = props
   
   return(
     <div>

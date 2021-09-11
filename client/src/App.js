@@ -11,7 +11,6 @@ import Pets from './components/Pets';
 import NewPet from './components/NewPet';
 import Pet from './components/Pet';
 import EditPet from './components/EditPet';
-import Home from './components/Home';
 import Items from './components/Items';
 import About from './components/About';
 import Item from './components/Item';
