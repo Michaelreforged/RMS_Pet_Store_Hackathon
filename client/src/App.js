@@ -19,7 +19,7 @@ function App() {
       <Route exact path="/" component={Home} />
       <Route exact path="/pets" component={Pets} />
       <Route exact path="/pets/new" component={NewPet} />
-      <Route exact path="/pets/:id" component={Pet} />
+      <Route exact path={`/pets/:id`} component={Pet} />
       <Route exact path="/pets/:id/edit" component={EditPet} />
       <Route exact path="/pets/:id/items" component={Items} />
       {/* <Route exact path="/pets/:id/items/:id" component={Item} /> */}

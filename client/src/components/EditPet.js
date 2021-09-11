@@ -1,12 +1,42 @@
-import React from "react"
-import { Form } from "semantic-ui-react";
+import axios from "axios";
+import React, { useEffect, useState } from "react"
+import { Button, Form } from "semantic-ui-react";
 
-const EditPet = () => {
+const EditPet = (props) => {
+const [name, setName] = useState(props.match.params.name)
+useEffect(()=>{
+  getPet()
+}, [])
+
+const getPet = async () => {
+  try {
+    let res = await axios.get(`/api/pets/${props.match.params.id}`)
+    setName(res.data.name)
+    console.log(res.data.name)
+  } catch {
+
+  }
+};
+
+const handleSubmit = async (e) => {
+  try {
+    let res = await axios.put(`/api/pets/${props.match.params.id}`, {name})
+    props.history.push("/pets")
+  } catch {
+
+  }
+};
+
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <Form.Field>
         <label>Name:</label>
-        <Form.Input />
+        <Form.Input 
+        required
+        value={name}
+        onChange={(e, { value }) => setName(value)}
+        />
+        <Button color="blue">Update</Button>
       </Form.Field>
     </Form>
   )

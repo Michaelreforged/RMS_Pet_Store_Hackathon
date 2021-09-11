@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import axios from "axios"
 import { Button } from "semantic-ui-react";
 import Pet from "./Pet";
+import { Link } from "react-router-dom";
 
 const Pets = () => {
 const [pets, setPets] = useState([]);
@@ -48,6 +49,9 @@ const renderPets = () => {
   return (
     <div>
       <h1>Pets</h1>
+      <Link to="/pets/new">
+        <Button color="green">Add a Pet</Button>
+      </Link>
       {renderPets()}
     </div>
   )
