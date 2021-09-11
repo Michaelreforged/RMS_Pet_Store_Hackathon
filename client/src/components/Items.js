@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import axios from "axios"
+import { Button, Card, Icon, Popup } from "semantic-ui-react";
 import ItemForm from "./ItemForm";
 import Item from "./Item";
 
@@ -82,7 +83,7 @@ const Items = (props) => {
 
   return(
     <div>
-
+      
       <button onClick={() => history.goBack()}>Back</button><br></br>
       <h1>{pets.name}</h1>
       <button onClick={() => setShowform2(!showform2)}> {showform2?"Cancel Add Item":"AddItem"}</button>

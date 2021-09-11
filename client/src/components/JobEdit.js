@@ -44,9 +44,9 @@ const JobEdit = (props) => {
   };
   return (
     <div>
-      <h1>JobFormEdit</h1>
+      <h1>Job Edit</h1>
       <Link to={`/jobs`}>
-        <Popup content='Go Back' trigger={<Button icon="angle left" color="blue" />} />
+        <Popup content='Go Back' trigger={<Button icon="angle left" color="teal" />} />
       </Link>
       <Form onSubmit={handleSubmit}>
         <Form.Field>
@@ -67,7 +67,7 @@ const JobEdit = (props) => {
             onChange={(e, { value }) => setSalary(value)}
           />
         </Form.Field>
-        <div><Button class="ui button" color='blue' type={'submit'}>Update</Button></div>
+        <div><Button class="ui button" color='teal' type={'submit'}>Update</Button></div>
       </Form>
     </div>
   );
