@@ -38,7 +38,6 @@ const renderPets = () => {
       return (
         <div>
         <Pet key={p.id} {...p} deletePet={deletePet}/>
-        <Button onClick={() => history.push(`/pets/${p.id}/items`)}>See Items</Button>
         </div>
       )
     })

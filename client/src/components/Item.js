@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-import React from "react"
-
-const Item = () => {
-  return (
-    <div>
-      <h1>Item</h1>
-    </div>
-  )
-}
-
-export default Item;
-=======
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 
@@ -32,4 +19,3 @@ const Item = (props) => {
 };
 
 export default Item
->>>>>>> 6ac8af46b332a0ad3bce79bf6cd523c6f8730071
