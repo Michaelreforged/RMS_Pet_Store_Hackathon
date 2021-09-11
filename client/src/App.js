@@ -1,4 +1,4 @@
-import { Container, Item } from "semantic-ui-react";
+import { Container} from "semantic-ui-react";
 import Navbar from "./components/Navbar";
 import { Switch, Route } from "react-router-dom";
 import Pets from './components/Pets';
@@ -7,6 +7,7 @@ import Pet from './components/Pet';
 import EditPet from './components/EditPet';
 import Home from './components/Home';
 import Items from './components/Items';
+import Item from './components/Item';
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
       <Route exact path="/pets/:id" component={Pet} />
       <Route exact path="/pets/:id/edit" component={EditPet} />
       <Route exact path="/pets/:pet_id/items" component={Items} />
-      {/* <Route exact path="/pets/:id/items/:id" component={Item} /> */}
+      <Route exact path="/pets/:pet_id/items/:id" component={Item} />
     </Switch>
   </Container>  
 </div>
