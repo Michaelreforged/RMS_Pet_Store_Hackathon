@@ -14,6 +14,7 @@ import EditPet from './components/EditPet';
 import Items from './components/Items';
 import About from './components/About';
 import Item from './components/Item';
+import Contact from "./Contact";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
               {/* <Route exact path="/jobs/:id" component={Job} /> */}
               <Route exact path="/jobs/:id/edit" component={JobEdit} />
               <Route exact path="/about" component={About} />
+              <Route exact path="/contact" component={Contact} />
             </Switch>
           </Container>  
         </div>

@@ -40,7 +40,7 @@ const Footer = () => {
         <Image centered size='mini' src={Logo} />
         <List horizontal inverted divided link size='small'>
           
-          <List.Item as='a' href='#'>
+          <List.Item as='a' href='/contact'>
             Contact Us
           </List.Item>
         </List>

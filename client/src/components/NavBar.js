@@ -9,10 +9,12 @@ const NavBar = () => {
     <Sticky>
       <div style={styles.NavBar}>
         <Menu inverted style={styles.Menu}>
+          <Link to="/">
           <Menu.Item as='a'>
             <img src={Logo} style={{ marginRight: '0.7em' }}/>
-            RSM Pets Store
+            RMS Pets Store
           </Menu.Item>
+          </Link>
           <Link to="/">
             <Menu.Item as='a'>Home</Menu.Item>
           </Link>

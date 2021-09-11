@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <div style={styles.Presentation}>
       <br/>
-      <h1>RSM Pets Stores</h1>
+      <h1>RMS Pets Stores</h1>
       <h3>by The Reactors</h3>
     </div>
   );
