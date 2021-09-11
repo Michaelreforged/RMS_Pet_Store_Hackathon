@@ -1,27 +1,33 @@
 import React from 'react';
 import './App.css';
 import { Container } from "semantic-ui-react";
-import Navbar from "./Components/Navbar";
+import NavBar from "./components/NavBar";
 import { Switch, Route } from "react-router-dom";
+import Footer from "./components/Footer";
+
+// import Pizzas from "./components/Pizzas";
+import Home from "./components/Home";
+import Jobs from "./components/Jobs";
+import JobNew from "./components/JobNew";
+// import PizzaEdit from "./components/PizzaEdit";
+// import Topping from "./components/Topping";
+// import Toppings from "./components/Toppings";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NavBar />
+      <Container>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/jobs" component={Jobs} />
+          <Route exact path="/jobs/new" component={JobNew} />
+          {/* <Route exact path="/jobs/:id" component={Job} />
+          <Route exact path="/jobs/:id/edit" component={JobEdit} /> */}
+        </Switch>
+      </Container>  
+      <Footer />
+    </>
   );
 }
 
