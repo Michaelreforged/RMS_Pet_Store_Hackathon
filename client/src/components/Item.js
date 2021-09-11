@@ -3,11 +3,12 @@ import { useHistory } from "react-router";
 
 const Item = (props) => {
   const history = useHistory()
-  const{petName,id,name,description,price, deleteItem} = props
+  console.log(props.location)
+  const{id,name,description,price,deleteItem} = props.location.state[1]
   
   return(
     <div>
-      <h1>{petName}</h1>
+      <h1>{props.location.state[0].name}</h1>
       <h2>{name}</h2>
       <h4>Product Description</h4>
       <p>{description} </p>

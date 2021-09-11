@@ -39,7 +39,7 @@ const Jobs = () => {
           <Button.Group basic centered vertical>
             <Link to={`/jobs/${j.id}/edit`}>
               <Button icon>
-                <Popup content='Edit' trigger={<Icon name="edit" color="blue" />} />
+                <Popup content='Edit' trigger={<Icon name="edit" color="teal" />} />
               </Button>
             </Link>
             <Button.Group>
@@ -58,7 +58,7 @@ const Jobs = () => {
     <div>
       <h1>Jobs</h1>
       <Link to={`/jobs/new`}>
-        <Popup content='New' trigger={<Button icon="file" color="blue" />} />
+        <Popup content='New' trigger={<Button icon="file" color="teal" />} />
       </Link>
       <br />
       <br />

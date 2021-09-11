@@ -2,14 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import axios from "axios"
 import ItemForm from "./ItemForm";
-// import Item from "./Item";
+import Item from "./Item";
 
 const Items = (props) => {
   const history = useHistory()
   console.log(props)
   const [items, setItems] = useState([]);
   const [pets, setPets] = useState([])
-  const [showform, setShowform] = useState(true)
+  const [showform, setShowform] = useState(false)
+  const [showform2, setShowform2] = useState(false)
   const pets_id = props.match.params.pet_id;
 
   useEffect(() => {
@@ -74,12 +75,7 @@ const Items = (props) => {
         editItem = {editItem}
 
         />}
-
-        {/* <Item
-        petName={pets.name}
-        {... i}
-
-        /> */}
+        <button onClick={() => history.push(`/pets/${pets_id}/items/${item.id}`,[pets, item])}>Show Item</button>
       </div>
     ))
   };
@@ -89,9 +85,10 @@ const Items = (props) => {
 
       <button onClick={() => history.goBack()}>Back</button><br></br>
       <h1>{pets.name}</h1>
-      <ItemForm
+      <button onClick={() => setShowform2(!showform2)}> {showform2?"Cancel Add Item":"AddItem"}</button>
+      {showform2&&<ItemForm
       addItem={addItem}
-      />
+      />}
       {addItem}
       {renderItems()}
     </div>

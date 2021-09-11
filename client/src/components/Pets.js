@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import axios from "axios"
-import { Button } from "semantic-ui-react";
+import { Button, Popup } from "semantic-ui-react";
 import Pet from "./Pet";
 import { Link } from "react-router-dom";
 import { useHistory } from 'react-router'
@@ -48,9 +48,11 @@ const renderPets = () => {
   return (
     <div>
       <h1>Pets</h1>
-      <Link to="/pets/new">
-        <Button color="green">Add a Pet</Button>
+      <Link to={`/pets/new`}>
+        <Popup content='New' trigger={<Button icon="file" color="teal" />} />
       </Link>
+      <br />
+      <br />
       {renderPets()}
     </div>
   )
