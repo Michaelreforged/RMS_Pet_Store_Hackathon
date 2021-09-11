@@ -8,7 +8,8 @@ const Items = (props) => {
   const history = useHistory()
   const [items, setItems] = useState([]);
   const [pets, setPets] = useState([])
-  const pets_id = props.match.params.pets_id; // Temporary hard code
+  const [showform, setShowform] = useState(true)
+  const pets_id = props.match.params.pets_id;
 
   useEffect(() => {
     getProps()
@@ -35,6 +36,26 @@ const Items = (props) => {
     }
   }
 
+  const editItem = async (item) =>{
+    console.log(items)
+    try {
+      let res = await axios.put(`/api/pets/${pets_id}/items/${item.id}`, item)
+      let newitems = items.map((i)=> (i.id === item.id) ? item : i);
+      setItems(newitems)
+    } catch (error) {
+      
+    }
+  }
+
+  const deleteItem = async (id) => {
+    try {
+      let res = await axios.delete(`/api/pets/${pets_id}/items/${id}`);
+      setItems(items.filter((i) => i.id !==id));
+    } catch (error) {
+    console.log(error)  
+    };
+  };
+
   const renderItems = () => {
     return items.map((i)=>(
       <div key={i.id}>
@@ -43,7 +64,14 @@ const Items = (props) => {
         <h4>Product Description</h4>
         <p>{i.description} </p>
         <p>Price is: $ {i.price}</p>
-        
+        <button onClick={() => deleteItem(i.id)}> Delete Item</button>
+        <button onClick={() => setShowform(!showform)}> {showform?"Cancel Edit Item":"Edit Item"}</button>
+        {showform && <ItemForm
+        {... i}
+        editItem = {editItem}
+
+        />}
+
         {/* <Item
         petName={pets.name}
         {... i}

@@ -3,7 +3,7 @@ import { useHistory } from "react-router";
 
 const Item = (props) => {
   const history = useHistory()
-  const{petName,name,description,price,} = props
+  const{petName,id,name,description,price,} = props
   
   return(
     <div>
@@ -12,6 +12,7 @@ const Item = (props) => {
       <h4>Product Description</h4>
       <p>{description} </p>
       <p>Price is: $ {price}</p>
+      <button onClick={() => deleteItem(id)}> Delete Item</button>
       <button onClick={() => history.goBack()}>Back</button><br></br>
     </div>
   )

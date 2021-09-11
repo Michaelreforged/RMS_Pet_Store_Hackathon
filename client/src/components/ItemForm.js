@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const ItemForm = (props) =>{
+  console.log(props)
   const[name, setName] = useState(props.name ? props.name : "");
   const[description, setDescription] = useState(props.description ? props.description : "");
   const[price, setPrice] = useState(props.price ? props.price : "");
