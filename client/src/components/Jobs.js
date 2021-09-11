@@ -2,8 +2,12 @@ import React, {useState, useEffect} from 'react';
 import axios from "axios";
 import { Button, Card, Icon, Popup } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router";
+
 
 const Jobs = () => {
+  const history = useHistory()
+
   const [jobs, setJobs] = useState([]);
 
   useEffect(() => {
@@ -31,7 +35,7 @@ const Jobs = () => {
   const renderJobs = () => {
     return jobs.map((j) => {
       return (
-        <Card>
+        <Card key={j.id}>
         <Card.Content><h3>Position: {j.title}</h3></Card.Content>
         <Card.Content><h4>Company: {j.company}</h4></Card.Content>
         <Card.Content><h4>Salary: {j.salary}</h4></Card.Content>
@@ -49,6 +53,7 @@ const Jobs = () => {
             </Button.Group>
           </Button.Group>
         </Button.Group>
+        <Button onClick={() => history.push(`/jobs/${j.id}`,[j])}>Show Job</Button>
         </Card>
       );
     });

@@ -1,23 +1,3 @@
-// import React from "react"
-// import { Link } from "react-router-dom";
-// import { Menu, Sticky } from "semantic-ui-react";
-
-// const Navbar = () => {
-//   return (
-//   <Sticky>
-//     <Menu>
-//       <Link to="/">
-//         <Menu.Item>Home</Menu.Item>
-//       </Link>
-//       <Link to="/pets">
-//         <Menu.Item>Pets</Menu.Item>
-//       </Link>
-//     </Menu>
-//   </Sticky>
-//   );
-// };
-
-// export default Navbar
 
 import React from 'react'
 import { Link } from 'react-router-dom';
@@ -29,10 +9,12 @@ const NavBar = () => {
     <Sticky>
       <div style={styles.NavBar}>
         <Menu inverted style={styles.Menu}>
+          <Link to="/">
           <Menu.Item as='a'>
             <img src={Logo} style={{ marginRight: '0.7em' }}/>
-            RSM Pets Store
+            RMS Pets Store
           </Menu.Item>
+          </Link>
           <Link to="/">
             <Menu.Item as='a'>Home</Menu.Item>
           </Link>
@@ -42,7 +24,7 @@ const NavBar = () => {
           <Link to="/jobs">
             <Menu.Item as='a'>Jobs</Menu.Item>
           </Link>
-          <Link to="/">
+          <Link to="/about">
             <Menu.Item as='a'>About</Menu.Item>
           </Link>
           

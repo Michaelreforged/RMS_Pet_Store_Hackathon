@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button, Card, Icon, Segment } from "semantic-ui-react";
-import JobForm from "./JobForm";
+import { useHistory } from "react-router";
 
 const Job = (props) => {
-  const [showForm, setShowForm] = useState(false);
+  const {title,company,salary} = props.location.state[0]
+  const history = useHistory()
+
   return (
+<<<<<<< HEAD
     <Card style={{ width: "100%", padding: "20px" }}>
       <Card.Content header={props.title} />
       {showForm && (
@@ -24,6 +27,14 @@ const Job = (props) => {
         </Button>
       </Button.Group>
     </Card>
+=======
+    <div>
+      <h1>{title}</h1>
+      <h3>{company}</h3>
+      <p>Salary per year ${salary}</p>
+      <button onClick={() => history.goBack()}>Back </button>
+    </div>
+>>>>>>> e08412c6a5e8572fa73bb23e3ad9c457116b5848
   );
 };
 export default Job;
