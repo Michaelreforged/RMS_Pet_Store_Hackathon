@@ -1,5 +1,6 @@
 import axios from "axios"
 import React, { useState } from "react"
+import { Link } from "react-router-dom";
 import { Button, Form } from "semantic-ui-react"
 
 const NewPet = (props) => {
@@ -18,18 +19,23 @@ const handleSubmit = async (e) => {
 
 
   return (
-
+    <div>
+      <Link to="/pets">
+        <Button color="gray">Back</Button>
+      </Link>
       <Form onSubmit={handleSubmit}>
         <Form.Field>
           <label>Name:</label>
           <Form.Input 
+          required
           value={name}
           onChange={(e, {value})=>setName(value)}
           />
           <Button color="green">Add</Button>
         </Form.Field>
       </Form>
+    </div>
   )
-}
+};
 
 export default NewPet;

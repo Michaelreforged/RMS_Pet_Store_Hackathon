@@ -11,6 +11,9 @@ const Pet = (props) => {
         <Link to={`/pets/${props.id}/edit`}>
         <Button color="blue">Edit</Button>
         </Link>
+        <Link to={`/pets/${props.id}/items`}>
+          <Button color="yellow">Items</Button>
+        </Link>
         <Button onClick={()=>props.deletePet(props.id)} color="red">Delete</Button>
       </Card>
     </div>
