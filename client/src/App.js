@@ -14,6 +14,7 @@ import EditPet from './components/EditPet';
 import Items from './components/Items';
 import About from './components/About';
 import Item from './components/Item';
+import Job from "./components/Job";
 
 function App() {
   return (
@@ -32,7 +33,7 @@ function App() {
               <Route exact path="/" component={Home} />
               <Route exact path="/jobs" component={Jobs} />
               <Route exact path="/jobs/new" component={JobNew} />
-              {/* <Route exact path="/jobs/:id" component={Job} /> */}
+              <Route exact path="/jobs/:id" component={Job} />
               <Route exact path="/jobs/:id/edit" component={JobEdit} />
               <Route exact path="/about" component={About} />
             </Switch>

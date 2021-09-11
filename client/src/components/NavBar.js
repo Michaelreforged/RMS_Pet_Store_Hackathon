@@ -42,7 +42,7 @@ const NavBar = () => {
           <Link to="/jobs">
             <Menu.Item as='a'>Jobs</Menu.Item>
           </Link>
-          <Link to="/">
+          <Link to="/about">
             <Menu.Item as='a'>About</Menu.Item>
           </Link>
           
