@@ -2,7 +2,9 @@ import React from "react"
 import { Link } from "react-router-dom";
 import { Button, Card, Segment } from "semantic-ui-react";
 
+
 const Pet = (props) => {
+  console.log("props")
   return (
     <div>
       <Card>

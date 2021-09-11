@@ -3,8 +3,11 @@ import axios from "axios"
 import { Button } from "semantic-ui-react";
 import Pet from "./Pet";
 import { Link } from "react-router-dom";
+import { useHistory } from 'react-router'
 
-const Pets = () => {
+
+const Pets = (props) => {
+const history = useHistory()
 const [pets, setPets] = useState([]);
 useEffect(()=>{
   getPets()
@@ -33,17 +36,14 @@ const renderPets = () => {
   return (
     pets.map((p)=>{
       return (
+        <div>
         <Pet key={p.id} {...p} deletePet={deletePet}/>
+        <Button onClick={() => history.push(`/pets/${p.id}/items`)}>See Items</Button>
+        </div>
       )
     })
   )
 };
-
-
-
-
-
-
 
 
   return (
