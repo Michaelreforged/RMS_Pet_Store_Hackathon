@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import axios from "axios"
-import Item from "./Item";
+import ItemForm from "./ItemForm";
+// import Item from "./Item";
 
 const Items = (props) => {
   const history = useHistory()
-  const [item, setItem] = useState([]);
-  const [pet, setPet] = useState([])
-  const pets_id = 2; // Temporary hard code
+  const [items, setItems] = useState([]);
+  const [pets, setPets] = useState([])
+  const pets_id = props.match.params.pets_id; // Temporary hard code
 
   useEffect(() => {
     getProps()
@@ -16,18 +17,27 @@ const Items = (props) => {
   const getProps = async ()=>{
     try {
       let res = await axios.get(`/api/pets/${pets_id}/items`);
-      console.log (res);
-      setItem(res.data.item);
-      setPet(res.data.pet);
+      setItems(res.data.item);
+      setPets(res.data.pet);
     } catch (error) {
       console.log("failed to get props")
       console.log(error)
     }
   }
 
+  const addItem = async (item) =>{
+    try {
+      let res = await axios.post( `/api/pets/${pets_id}/items`, item)
+      setItems([res.data.item, ...items])
+      console.log(item)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   const renderItems = () => {
-    return item.map((i)=>(
-      <div>
+    return items.map((i)=>(
+      <div key={i.id}>
 
         <h2>{i.name}</h2>
         <h4>Product Description</h4>
@@ -35,8 +45,9 @@ const Items = (props) => {
         <p>Price is: $ {i.price}</p>
         
         {/* <Item
+        petName={pets.name}
         {... i}
-        petName={pet.name}
+
         /> */}
       </div>
     ))
@@ -44,7 +55,13 @@ const Items = (props) => {
 
   return(
     <div>
-      <h1>{pet.name}</h1>
+
+      <button onClick={() => history.goBack()}>Back</button><br></br>
+      <h1>{pets.name}</h1>
+      <ItemForm
+      addItem={addItem}
+      />
+      {addItem}
       {renderItems()}
     </div>
   )
