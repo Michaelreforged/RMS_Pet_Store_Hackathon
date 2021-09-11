@@ -6,10 +6,11 @@ import ItemForm from "./ItemForm";
 
 const Items = (props) => {
   const history = useHistory()
+  console.log(props)
   const [items, setItems] = useState([]);
   const [pets, setPets] = useState([])
   const [showform, setShowform] = useState(true)
-  const pets_id = props.match.params.pets_id;
+  const pets_id = props.match.params.pet_id;
 
   useEffect(() => {
     getProps()
@@ -18,6 +19,7 @@ const Items = (props) => {
   const getProps = async ()=>{
     try {
       let res = await axios.get(`/api/pets/${pets_id}/items`);
+      console.log(res)
       setItems(res.data.item);
       setPets(res.data.pet);
     } catch (error) {
@@ -29,7 +31,8 @@ const Items = (props) => {
   const addItem = async (item) =>{
     try {
       let res = await axios.post( `/api/pets/${pets_id}/items`, item)
-      setItems([res.data.item, ...items])
+      console.log(res.data)
+      setItems([res.data, ...items])
       console.log(item)
     } catch (error) {
       console.log(error)
@@ -57,17 +60,17 @@ const Items = (props) => {
   };
 
   const renderItems = () => {
-    return items.map((i)=>(
-      <div key={i.id}>
+    return items.map((item)=>(
+      <div key={item.id}>
 
-        <h2>{i.name}</h2>
+        <h2>{item.name}</h2>
         <h4>Product Description</h4>
-        <p>{i.description} </p>
-        <p>Price is: $ {i.price}</p>
-        <button onClick={() => deleteItem(i.id)}> Delete Item</button>
+        <p>{item.description} </p>
+        <p>Price is: $ {item.price}</p>
+        <button onClick={() => deleteItem(item.id)}> Delete Item</button>
         <button onClick={() => setShowform(!showform)}> {showform?"Cancel Edit Item":"Edit Item"}</button>
         {showform && <ItemForm
-        {... i}
+        {... item}
         editItem = {editItem}
 
         />}
